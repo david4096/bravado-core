@@ -143,7 +143,7 @@ DEFAULT_FORMATS = {
         description='Converts [wire]integer:int32 <=> python int'),
     'int64': SwaggerFormat(
         format='int64',
-        to_wire=lambda i: i if isinstance(i, long) else long(i),
+        to_wire=lambda i: i if isinstance(i, str) else str(i),
         to_python=lambda i: i if isinstance(i, long) else long(i),
         validate=NO_OP,  # jsonschema validates integer
         description='Converts [wire]integer:int64 <=> python long'),
